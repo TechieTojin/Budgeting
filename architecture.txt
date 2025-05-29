@@ -1,0 +1,73 @@
+BudgetIQ - Architecture Diagram
+=============================
+
++------------------+     +------------------+     +------------------+
+|                  |     |                  |     |                  |
+|  Client Browser  | --> |  Vite Dev Server | --> |  React App       |
+|                  |     |                  |     |                  |
++------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
++------------------+     +------------------+     +------------------+
+|                  |     |                  |     |                  |
+|  Public Assets   | <-- |  Components      | <-- |  Pages           |
+|  (Static Files)  |     |  (UI Elements)   |     |  (Routes)        |
+|                  |     |                  |     |                  |
++------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
++------------------+     +------------------+     +------------------+
+|                  |     |                  |     |                  |
+|  Utils           | <-- |  Services        | <-- |  Hooks           |
+|  (Helpers)       |     |  (API Calls)     |     |  (Custom Hooks)  |
+|                  |     |                  |     |                  |
++------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
++------------------+     +------------------+     +------------------+
+|                  |     |                  |     |                  |
+|  Types           | <-- |  Contexts        | <-- |  Data            |
+|  (TypeScript)    |     |  (State Mgmt)    |     |  (Static Data)   |
+|                  |     |                  |     |                  |
++------------------+     +------------------+     +------------------+
+
+Key Components:
+--------------
+1. Client Layer:
+   - Browser-based React application
+   - Vite for development and building
+   - Tailwind CSS for styling
+
+2. Application Layer:
+   - Pages: Main route components
+   - Components: Reusable UI elements
+   - Public Assets: Static files and resources
+
+3. Business Logic Layer:
+   - Hooks: Custom React hooks for logic
+   - Services: API and external service integrations
+   - Utils: Helper functions and utilities
+
+4. Data Layer:
+   - Contexts: State management using React Context
+   - Types: TypeScript type definitions
+   - Data: Static data and configurations
+
+Data Flow:
+----------
+1. User interactions start from the Client Browser
+2. Requests flow through Vite Dev Server in development
+3. React App handles routing and component rendering
+4. Components can access data through Contexts
+5. Services handle external API calls
+6. Utils provide helper functions
+7. Types ensure type safety throughout the application
+
+Dependencies:
+------------
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- ESLint
+- PostCSS 
